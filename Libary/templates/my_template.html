@@ -1,0 +1,25 @@
+{% for category in my_objects %}
+    <div>
+        <h2>{{ category.name }}</h2>
+        <p>{{ category.author }}</p>
+    </div>
+{% endfor %}
+
+<div>
+    <span class="step-links">
+    {% if my_objects.has_previous %}
+        <a href="?page=1">&laquo; первая</a>
+        <a href="?page={{ my_objects.previous_page_number }}">предыдущая</a>
+    {% endif %}
+
+    <span class="current">
+        Страница {{ my_objects.number }} из {{ my_objects.paginator.num_pages }}.
+    </span>
+
+    {% if my_objects.has_next %}
+        <a href="?page={{ my_objects.next_page_number }}">следующая</a>
+        <a href="?page={{ my_objects.paginator.num_pages }}">последняя &raquo;</a>
+    {% endif %}
+</span>
+
+</div>

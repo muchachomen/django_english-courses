@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    {% for product in media %}
+     {% if product.my_image %}
+     <img src="{{ product.my_image.url }}" alt="Моя картинка">
+     {% endif %}
+
+    {% endfor %}
+</ul>
+</body>
+</html>
